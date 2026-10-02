@@ -1,0 +1,12 @@
+services:
+  mi-backend:
+    build: ./backend
+    expose:
+      - "5000"
+
+  mi-frontend:
+    build: ./frontend
+    ports:
+      - "8081:3000"
+    depends_on:
+      - mi-backend
